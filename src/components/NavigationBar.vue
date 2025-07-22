@@ -95,6 +95,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 $color-primary: #6C63FF;
+$color-secondary: #3F3D56;
 
 .bar {
   display: flex;
@@ -115,9 +116,14 @@ $color-primary: #6C63FF;
     font-size: 20px;
     border-radius: 20px;
 
-    &:hover, &:active, &--active {
+    &:active, &--active {
       color: white;
       background-color: $color-primary;
+    }
+
+    &:hover {
+      color: white;
+      background-color: $color-secondary;
       cursor: pointer;
     }
   }
