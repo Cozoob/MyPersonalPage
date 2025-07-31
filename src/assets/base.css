@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800&display=swap');
 
+:root {
+  --font-extra-bold: 700;
+  --font-bold: 600;
+  --font-semi-bold: 500;
+  --font-medium: 400;
+  --font-regular: 300;
+  --font-thin: 200;
+}
+
 /*:root {*/
 /*  --vt-c-white: #ffffff;*/
 /*  --vt-c-white-soft: #f8f8f8;*/
@@ -56,7 +65,7 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: 300;
+  font-weight: var(--font-regular);
 }
 
 /*body {*/

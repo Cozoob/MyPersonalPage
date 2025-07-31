@@ -1,15 +1,17 @@
 <script lang="ts">
 import {defineComponent} from 'vue'
 import NavigationBar from '@/components/NavigationBar.vue'
+import GenericMainSections from "@/components/GenericMainSections.vue";
+import FooterBar from "@/components/FooterBar.vue";
 
 export default defineComponent({
   name: "MainView",
 
-  components: {NavigationBar: NavigationBar},
+  components: {NavigationBar, GenericMainSections, FooterBar},
 
   data() {
     return {
-      sections: [
+      sections: [ // todo use pinia for that?
         {id: 'about', label: 'About'},
         {id: 'experience', label: 'Experience'},
         {id: 'skills', label: 'Skills'},
@@ -28,16 +30,9 @@ export default defineComponent({
       :navItems="sections"
       :activeSectionId="activeSectionId"
       @update:activeSectionId="activeSectionId = $event"/>
-    <section
-      v-for="section in sections"
-      :id="section.id"
-      class="page__section"
-    >
-      <h2>{{ section.label }}</h2>
-      <p>Content TODO for {{ section.label }}</p>
-    </section>
+    <GenericMainSections :sections="sections"/>
+    <FooterBar />
   </div>
-
 </template>
 
 <style scoped lang="scss">
@@ -54,11 +49,6 @@ export default defineComponent({
     position: sticky;
     top: 20px;
     margin: 20px 0;
-  }
-
-  &__section {
-    height: 100vh;
-    border: 1px pink solid;
   }
 }
 </style>

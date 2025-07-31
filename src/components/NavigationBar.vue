@@ -105,7 +105,7 @@ $color-secondary: #3F3D56;
   width: 100%;
   height: 60px;
   border-radius: 20px;
-  border: 1px #E0E0E0 solid;
+  border: 2px #E0E0E0 solid;
 
   &__item {
     display: flex;
@@ -113,6 +113,7 @@ $color-secondary: #3F3D56;
     align-items: center;
     width: 25%;
     height: 100%;
+    font-weight: var(--font-bold);
     font-size: 20px;
     border-radius: 20px;
 
