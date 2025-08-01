@@ -31,7 +31,7 @@ export default defineComponent({
       :activeSectionId="activeSectionId"
       @update:activeSectionId="activeSectionId = $event"/>
     <GenericMainSections :sections="sections"/>
-    <FooterBar />
+    <FooterBar/>
   </div>
 </template>
 

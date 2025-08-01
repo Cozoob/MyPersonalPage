@@ -11,12 +11,13 @@ interface Section {
 export default defineComponent({
   name: "GenericMainSections",
 
-  components: { AboutSection },
+  components: {AboutSection},
 
   props: {
     sections: {
       type: Array as PropType<Section[]>,
-      required: true
+      required: true,
+      default: () => []
     }
   }
 })
@@ -26,11 +27,11 @@ export default defineComponent({
   <div class="container">
     <section
       v-for="section in sections"
-      :id="section.id"
+      :key="section.id"
       class="container__section"
     >
       <template v-if="section.id == 'about'">
-        <AboutSection />
+        <AboutSection/>
       </template>
       <template v-else-if="section.id == 'experience'">
         <h2>experience - GENERIC</h2>

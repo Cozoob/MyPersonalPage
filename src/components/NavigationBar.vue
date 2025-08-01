@@ -46,7 +46,7 @@ export default defineComponent({
         if (el) {
           const yOffset = -100;
           const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+          window.scrollTo({top: y, behavior: 'smooth'});
         }
       },
 
