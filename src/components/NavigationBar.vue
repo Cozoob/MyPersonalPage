@@ -34,31 +34,29 @@ function scrollToSection(id: string): void {
   }
 }
 
-function setupObserver() {
-  console.error('setupObserver1')
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        console.error('setupObserver2')
-        if (entry.isIntersecting) {
-          const id = entry.target.id
-          emit('update', id)
-          window.history.pushState(null, '', '#' + id)
-        }
-      })
-    },
-    {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
-    },
-  )
+function setupObserver(): void {
+  const options: IntersectionObserverInit = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  }
+  observer = new IntersectionObserver(observerCallback, options)
+  observeEachSection()
+}
 
-  console.error('setupObserver3', observer)
+function observerCallback(entries: IntersectionObserverEntry[]): void {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id
+      emit('update', id)
+      window.history.pushState(null, '', '#' + id)
+    }
+  })
+}
 
+function observeEachSection(): void {
   props.navItems.forEach((item) => {
     const el = document.getElementById(item.id)
-    console.log('el', el)
     if (el) {
       observer!.observe(el)
     }

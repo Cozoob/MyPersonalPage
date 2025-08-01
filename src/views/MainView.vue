@@ -5,7 +5,6 @@ import GenericMainSections from '@/components/GenericMainSections.vue'
 import FooterBar from '@/components/FooterBar.vue'
 
 const sections = [
-  // todo use pinia for that?
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
   { id: 'skills', label: 'Skills' },
