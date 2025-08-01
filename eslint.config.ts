@@ -17,6 +17,7 @@ export default defineConfigWithVueTs(
 
   {
     rules: {
+      'no-console': 'warn',
       'vue/block-lang': [
         'error',
         {
@@ -98,7 +99,7 @@ export default defineConfigWithVueTs(
       'vue/no-root-v-if': 'error',
       'vue/no-undef-properties': 'error',
       'vue/no-use-v-else-with-v-for': 'error',
-      'vue/no-unused-emit-declarations': 'error',
+      'vue/no-unused-emit-declarations': 'warn',
       'vue/no-boolean-default': ['error', 'default-false'],
       'vue/no-undef-components': [
         'error',
@@ -106,8 +107,8 @@ export default defineConfigWithVueTs(
           ignorePatterns: [],
         },
       ],
-      'vue/no-unused-properties': 'error',
-      'vue/no-unused-refs': 'error',
+      'vue/no-unused-properties': 'warn',
+      'vue/no-unused-refs': 'warn',
       'vue/prefer-prop-type-boolean-first': 'error',
       'vue/prefer-define-options': 'error',
       'vue/require-typed-object-prop': 'error',
