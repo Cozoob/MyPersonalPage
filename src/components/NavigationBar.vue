@@ -90,6 +90,7 @@ $color-secondary: #3f3d56;
   height: 60px;
   border-radius: 20px;
   border: 2px #e0e0e0 solid;
+  background-color: #ffffff;
 
   &__item {
     display: flex;
