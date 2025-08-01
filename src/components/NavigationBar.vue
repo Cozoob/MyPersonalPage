@@ -1,91 +1,77 @@
-<script lang="ts">
-import {defineComponent, nextTick, type PropType} from 'vue'
+<script setup lang="ts">
+import { nextTick, onBeforeUnmount, onMounted } from 'vue'
+import type Section from '@/model/section.ts'
 
-interface NavItem {
-  id: string;
-  label: string;
+const props = defineProps<{
+  navItems: Section[]
+  activeSectionId: string
+}>()
+
+const emit = defineEmits<{
+  update: [id: string]
+}>()
+
+let observer = null as IntersectionObserver | null
+
+onMounted(() => {
+  nextTick(() => {
+    setupObserver()
+  })
+})
+
+onBeforeUnmount(() => {
+  if (observer) {
+    observer.disconnect()
+  }
+})
+
+function scrollToSection(id: string): void {
+  const el = document.getElementById(id)
+  if (el) {
+    const yOffset = -100
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset
+    window.scrollTo({ top: y, behavior: 'smooth' })
+  }
 }
 
-export default defineComponent({
-    name: "NavigationBar",
-
-    props: {
-      navItems: {
-        type: Array as PropType<NavItem[]>,
-        required: true
-      },
-      activeSectionId: {
-        type: String,
-        required: true
-      }
-    },
-
-    emits: ['update:activeSectionId'],
-
-    data() {
-      return {
-        observer: null as IntersectionObserver | null,
-      };
-    },
-
-    mounted() {
-      nextTick(() => {
-        this.setupObserver();
-      });
-    },
-
-    beforeUnmount() {
-      if (this.observer) {
-        this.observer.disconnect();
-      }
-    },
-
-    methods: {
-      scrollToSection(id: string): void {
-        const el = document.getElementById(id);
-        if (el) {
-          const yOffset = -100;
-          const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({top: y, behavior: 'smooth'});
+function setupObserver() {
+  console.error('setupObserver1')
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        console.error('setupObserver2')
+        if (entry.isIntersecting) {
+          const id = entry.target.id
+          emit('update', id)
+          window.history.pushState(null, '', '#' + id)
         }
-      },
+      })
+    },
+    {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    },
+  )
 
-      setupObserver() {
-        this.observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const id = entry.target.id;
-                this.$emit('update:activeSectionId', id);
-                window.history.pushState(null, '', '#' + id);
-              }
-            });
-          },
-          {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.50,
-          }
-        );
+  console.error('setupObserver3', observer)
 
-        this.navItems.forEach((item) => {
-          const el = document.getElementById(item.id);
-          if (el) {
-            this.observer!.observe(el);
-          }
-        });
-      },
+  props.navItems.forEach((item) => {
+    const el = document.getElementById(item.id)
+    console.log('el', el)
+    if (el) {
+      observer!.observe(el)
     }
-  },
-)
+  })
+}
 </script>
 
 <template>
   <nav class="bar">
     <div
       v-for="item in navItems"
-      :class="['bar__item', {'bar__item--active': activeSectionId === item.id}]"
       :key="item.id"
+      :class="['bar__item', { 'bar__item--active': activeSectionId === item.id }]"
       @click.prevent="scrollToSection(item.id)"
     >
       <p>{{ item.label }}</p>
@@ -94,8 +80,8 @@ export default defineComponent({
 </template>
 
 <style scoped lang="scss">
-$color-primary: #6C63FF;
-$color-secondary: #3F3D56;
+$color-primary: #6c63ff;
+$color-secondary: #3f3d56;
 
 .bar {
   display: flex;
@@ -105,7 +91,7 @@ $color-secondary: #3F3D56;
   width: 100%;
   height: 60px;
   border-radius: 20px;
-  border: 2px #E0E0E0 solid;
+  border: 2px #e0e0e0 solid;
 
   &__item {
     display: flex;
@@ -117,7 +103,8 @@ $color-secondary: #3F3D56;
     font-size: 20px;
     border-radius: 20px;
 
-    &:active, &--active {
+    &:active,
+    &--active {
       color: white;
       background-color: $color-primary;
     }

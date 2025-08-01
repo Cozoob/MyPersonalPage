@@ -1,11 +1,3 @@
-<script lang="ts">
-import {defineComponent} from 'vue'
-
-export default defineComponent({
-  name: "AboutSection"
-})
-</script>
-
 <template>
   <div class="container">
     <div class="container__vital-info vital-info">
@@ -13,7 +5,7 @@ export default defineComponent({
         <div class="left-wrapper__left-wrapper-top left-wrapper-top">
           <p class="left-wrapper-top__full-name">Marcin Kozub</p>
           <div class="left-wrapper-top__localization localization">
-            <img class="localization__icon" src="@/assets/poland_icon.svg" alt="Poland's icon"/>
+            <img class="localization__icon" src="@/assets/poland_icon.svg" alt="Poland's icon" />
             <p class="localization__text">Based in Poland</p>
           </div>
         </div>
@@ -22,56 +14,50 @@ export default defineComponent({
           <p class="left-wrapper-bottom__position-text position-text">DEVELOPER</p>
         </div>
       </div>
-      <img class="vital-info__profile-image" src="@/assets/marcin_photo.png"
-           alt="Marcin's profile"/>
+      <img
+        class="vital-info__profile-image"
+        src="@/assets/marcin_photo.png"
+        alt="Marcin's profile"
+      />
       <div class="vital-info__right-wrapper">
         <div class="right-wrapper__info-wrapper info-wrapper">
           <div class="info-wrapper__icon-with-number icon-with-number">
-            <img class="icon-with-number__icon" src="@/assets/suitcase_icon.png"
-                 alt="Suitcase icon"/>
+            <img
+              class="icon-with-number__icon"
+              src="@/assets/suitcase_icon.png"
+              alt="Suitcase icon"
+            />
             <p class="icon-with-number__number">3+ years</p>
           </div>
-          <p class="info-wrapper__title">
-            of experience
-          </p>
+          <p class="info-wrapper__title">of experience</p>
           <div class="info-wrapper__icon-with-number icon-with-number">
-            <img class="icon-with-number__icon" src="@/assets/certificate_icon.png"
-                 alt="Certificate icon"/>
+            <img
+              class="icon-with-number__icon"
+              src="@/assets/certificate_icon.png"
+              alt="Certificate icon"
+            />
             <p class="icon-with-number__number">8</p>
           </div>
-          <p class="info-wrapper__title">
-            certificates
-          </p>
+          <p class="info-wrapper__title">certificates</p>
           <div class="info-wrapper__icon-with-number icon-with-number">
-            <img class="icon-with-number__icon" src="@/assets/trophy_icon.png" alt="Trophy icon"/>
+            <img class="icon-with-number__icon" src="@/assets/trophy_icon.png" alt="Trophy icon" />
             <p class="icon-with-number__number">4</p>
           </div>
-          <p class="info-wrapper__title">
-            awards won
-          </p>
+          <p class="info-wrapper__title">awards won</p>
         </div>
         vital-info__right-wrapper
       </div>
     </div>
     <div class="container__socials-resume socials-resume">
-      <div class="socials-resume__social-buttons">
-        social buttons
-      </div>
-      <div class="socials-resume__resume-button">
-        resume button
-      </div>
+      <div class="socials-resume__social-buttons">social buttons</div>
+      <div class="socials-resume__resume-button">resume button</div>
     </div>
-    <div class="container__contact-options contact-options">
-      contact-options
-    </div>
-    <div class="container__about-text about-text">
-      about-text
-    </div>
+    <div class="container__contact-options contact-options">contact-options</div>
+    <div class="container__about-text about-text">about-text</div>
   </div>
 </template>
 
 <style scoped lang="scss">
-
 .container {
   display: flex;
   flex-direction: column;
@@ -88,7 +74,7 @@ export default defineComponent({
     max-width: 200px;
     max-height: 200px;
     border-radius: 50%;
-    border: 2px #E0E0E0 solid;
+    border: 2px #e0e0e0 solid;
   }
 }
 
@@ -147,7 +133,6 @@ export default defineComponent({
 }
 
 .info-wrapper {
-
   &__title {
     font-size: 24px;
   }

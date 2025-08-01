@@ -1,37 +1,22 @@
-<script lang="ts">
-import {defineComponent, type PropType} from 'vue'
+<script setup lang="ts">
+import AboutSection from '@/components/AboutSection.vue'
+import type Section from '@/model/section.ts'
 
-import AboutSection from "@/components/AboutSection.vue";
-
-interface Section {
-  id: string;
-  label: string;
-}
-
-export default defineComponent({
-  name: "GenericMainSections",
-
-  components: {AboutSection},
-
-  props: {
-    sections: {
-      type: Array as PropType<Section[]>,
-      required: true,
-      default: () => []
-    }
-  }
-})
+withDefaults(
+  defineProps<{
+    sections?: Section[]
+  }>(),
+  {
+    sections: () => [],
+  },
+)
 </script>
 
 <template>
   <div class="container">
-    <section
-      v-for="section in sections"
-      :key="section.id"
-      class="container__section"
-    >
+    <section v-for="section in sections" :key="section.id" class="container__section">
       <template v-if="section.id == 'about'">
-        <AboutSection/>
+        <AboutSection />
       </template>
       <template v-else-if="section.id == 'experience'">
         <h2>experience - GENERIC</h2>
@@ -62,11 +47,11 @@ export default defineComponent({
   width: 100%;
 
   &__section {
-    height: 100%;
+    //height: 100%;
+    height: 100vh;
     max-width: 1200px;
     width: 100%;
     border: 1px pink solid;
   }
 }
-
 </style>

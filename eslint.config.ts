@@ -54,7 +54,7 @@ export default defineConfigWithVueTs(
       'vue/define-props-destructuring': [
         'error',
         {
-          destructure: 'always',
+          destructure: 'never',
         },
       ],
       'vue/enforce-style-attribute': ['error', { allow: ['scoped'] }],
@@ -116,7 +116,7 @@ export default defineConfigWithVueTs(
       'vue/v-for-delimiter-style': ['error', 'in'],
       'vue/v-on-handler-style': [
         'error',
-        ['method', 'inline-function'],
+        ['method', 'inline'],
         {
           ignoreIncludesComment: false,
         },
