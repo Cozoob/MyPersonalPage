@@ -14,7 +14,12 @@ withDefaults(
 
 <template>
   <div class="container">
-    <section v-for="section in sections" :key="section.id" class="container__section">
+    <section
+      v-for="section in sections"
+      :id="section.id"
+      :key="section.id"
+      class="container__section"
+    >
       <template v-if="section.id == 'about'">
         <AboutSection />
       </template>
