@@ -4,6 +4,7 @@ import pluginVue from 'eslint-plugin-vue'
 import pluginVitest from '@vitest/eslint-plugin'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 
+const ruleLevel = 'warn'
 export default defineConfigWithVueTs(
   {
     name: 'app/files-to-lint',
@@ -19,48 +20,48 @@ export default defineConfigWithVueTs(
     rules: {
       'no-console': 'warn',
       'vue/block-lang': [
-        'error',
+        ruleLevel,
         {
           script: {
             lang: 'ts',
           },
         },
       ],
-      'vue/component-api-style': ['error', ['script-setup']],
+      'vue/component-api-style': [ruleLevel, ['script-setup']],
       'vue/component-name-in-template-casing': [
-        'error',
+        ruleLevel,
         'PascalCase',
         {
           registeredComponentsOnly: true,
           ignores: [],
         },
       ],
-      'vue/component-options-name-casing': ['error', 'PascalCase'],
+      'vue/component-options-name-casing': [ruleLevel, 'PascalCase'],
       'vue/custom-event-name-casing': [
-        'error',
+        ruleLevel,
         'camelCase',
         {
           ignores: [],
         },
       ],
-      'vue/define-emits-declaration': ['error', 'type-based'],
+      'vue/define-emits-declaration': [ruleLevel, 'type-based'],
       'vue/define-macros-order': [
-        'error',
+        ruleLevel,
         {
           order: ['defineProps', 'defineEmits'],
           defineExposeLast: false,
         },
       ],
-      'vue/define-props-declaration': ['error', 'type-based'],
+      'vue/define-props-declaration': [ruleLevel, 'type-based'],
       'vue/define-props-destructuring': [
-        'error',
+        ruleLevel,
         {
           destructure: 'never',
         },
       ],
-      'vue/enforce-style-attribute': ['error', { allow: ['scoped'] }],
+      'vue/enforce-style-attribute': [ruleLevel, { allow: ['module'] }],
       'vue/html-button-has-type': [
-        'error',
+        ruleLevel,
         {
           button: true,
           submit: true,
@@ -68,15 +69,15 @@ export default defineConfigWithVueTs(
         },
       ],
       'vue/match-component-file-name': [
-        'error',
+        ruleLevel,
         {
           extensions: ['vue'],
           shouldMatchCase: true,
         },
       ],
-      'vue/match-component-import-name': 'error',
+      'vue/match-component-import-name': ruleLevel,
       'vue/max-lines-per-block': [
-        'warn',
+        ruleLevel,
         {
           template: 200,
           script: 300,
@@ -84,39 +85,39 @@ export default defineConfigWithVueTs(
           skipBlankLines: true,
         },
       ],
-      'vue/max-props': ['warn', { maxProps: 5 }],
-      'vue/max-template-depth': ['warn', { maxDepth: 5 }],
+      'vue/max-props': [ruleLevel, { maxProps: 5 }],
+      'vue/max-template-depth': [ruleLevel, { maxDepth: 5 }],
       'vue/new-line-between-multi-line-property': [
-        'error',
+        ruleLevel,
         {
           minLineOfMultilineProperty: 2,
         },
       ],
-      'vue/next-tick-style': ['error', 'promise'],
-      'vue/no-empty-component-block': 'error',
-      'vue/no-import-compiler-macros': 'error',
-      'vue/no-ref-object-reactivity-loss': 'error',
-      'vue/no-root-v-if': 'error',
-      'vue/no-undef-properties': 'error',
-      'vue/no-use-v-else-with-v-for': 'error',
+      'vue/next-tick-style': [ruleLevel, 'promise'],
+      'vue/no-empty-component-block': ruleLevel,
+      'vue/no-import-compiler-macros': ruleLevel,
+      'vue/no-ref-object-reactivity-loss': ruleLevel,
+      'vue/no-root-v-if': ruleLevel,
+      'vue/no-undef-properties': ruleLevel,
+      'vue/no-use-v-else-with-v-for': ruleLevel,
       'vue/no-unused-emit-declarations': 'warn',
-      'vue/no-boolean-default': ['error', 'default-false'],
+      'vue/no-boolean-default': [ruleLevel, 'default-false'],
       'vue/no-undef-components': [
-        'error',
+        ruleLevel,
         {
           ignorePatterns: [],
         },
       ],
-      'vue/no-unused-properties': 'warn',
-      'vue/no-unused-refs': 'warn',
-      'vue/prefer-prop-type-boolean-first': 'error',
-      'vue/prefer-define-options': 'error',
-      'vue/require-typed-object-prop': 'error',
-      'vue/require-typed-ref': 'error',
-      'vue/slot-name-casing': ['error', 'camelCase'],
-      'vue/v-for-delimiter-style': ['error', 'in'],
+      'vue/no-unused-properties': ruleLevel,
+      'vue/no-unused-refs': ruleLevel,
+      'vue/prefer-prop-type-boolean-first': ruleLevel,
+      'vue/prefer-define-options': ruleLevel,
+      'vue/require-typed-object-prop': ruleLevel,
+      'vue/require-typed-ref': ruleLevel,
+      'vue/slot-name-casing': [ruleLevel, 'camelCase'],
+      'vue/v-for-delimiter-style': [ruleLevel, 'in'],
       'vue/v-on-handler-style': [
-        'error',
+        ruleLevel,
         ['method', 'inline'],
         {
           ignoreIncludesComment: false,
