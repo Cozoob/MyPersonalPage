@@ -8,7 +8,7 @@ import PersonalDetails from '@/components/about/PersonalDetails.vue'
       <PersonalDetails :class="$style['vital-info__left-wrapper']" />
       <img
         :class="$style['vital-info__profile-image']"
-        src="../../assets/marcin_photo.png"
+        src="@/assets/marcin_photo.png"
         alt="Marcin's profile"
       />
       <div :class="[$style['vital-info__right-wrapper'], $style['right-wrapper']]">
@@ -16,7 +16,7 @@ import PersonalDetails from '@/components/about/PersonalDetails.vue'
           <div :class="[$style['info-wrapper__icon-with-number'], $style['icon-with-number']]">
             <img
               :class="$style['icon-with-number__icon']"
-              src="https://img.icons8.com/ios/50/FFFFFF/permanent-job.png"
+              src="@/assets/icons/job_icon.png"
               alt="permanent-job"
             />
             <p :class="$style['icon-with-number__number']">3+ years</p>
@@ -33,7 +33,7 @@ import PersonalDetails from '@/components/about/PersonalDetails.vue'
           <div :class="[$style['info-wrapper__icon-with-number'], $style['icon-with-number']]">
             <img
               :class="$style['icon-with-number__icon']"
-              src="../../assets/certificate_icon.png"
+              src="@/assets/icons/certification_icon.png"
               alt="Certificate icon"
             />
             <p :class="$style['icon-with-number__number']">8</p>
@@ -44,7 +44,7 @@ import PersonalDetails from '@/components/about/PersonalDetails.vue'
           <div :class="[$style['info-wrapper__icon-with-number'], $style['icon-with-number']]">
             <img
               :class="$style['icon-with-number__icon']"
-              src="../../assets/trophy_icon.png"
+              src="@/assets/icons/trophy_icon.png"
               alt="Trophy icon"
             />
             <p :class="$style['icon-with-number__number']">4</p>

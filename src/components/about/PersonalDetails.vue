@@ -5,7 +5,7 @@
       <div :class="$style.localization">
         <img
           :class="$style['localization__icon']"
-          src="@/assets/poland_icon.svg"
+          src="@/assets/icons/poland_icon.svg"
           alt="Poland's icon"
         />
         <p :class="$style['localization__text']">Based in Poland</p>
