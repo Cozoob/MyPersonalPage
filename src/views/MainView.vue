@@ -41,7 +41,7 @@ function onNavigationBarUpdate(sectionId: string): void {
 
   &__navigation-bar {
     position: sticky;
-    top: 20px;
+    top: 0;
     margin: 20px 0;
   }
 }

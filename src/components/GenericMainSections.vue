@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AboutSection from '@/components/AboutSection.vue'
+import AboutSection from '@/components/about/AboutSection.vue'
 import type Section from '@/model/section.ts'
 
 withDefaults(

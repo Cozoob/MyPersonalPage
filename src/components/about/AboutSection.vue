@@ -1,51 +1,52 @@
+<script setup lang="ts">
+import PersonalDetails from '@/components/about/PersonalDetails.vue'
+</script>
+
 <template>
   <div class="container">
     <div class="container__vital-info vital-info">
-      <div class="vital-info__left-wrapper left-wrapper">
-        <div class="left-wrapper__left-wrapper-top left-wrapper-top">
-          <p class="left-wrapper-top__full-name">Marcin Kozub</p>
-          <div class="left-wrapper-top__localization localization">
-            <img class="localization__icon" src="@/assets/poland_icon.svg" alt="Poland's icon" />
-            <p class="localization__text">Based in Poland</p>
-          </div>
-        </div>
-        <div class="left-wrapper__left-wrapper-bottom left-wrapper-bottom">
-          <p class="left-wrapper-bottom__salesforce-text salesforce-text">SALESFORCE</p>
-          <p class="left-wrapper-bottom__position-text position-text">DEVELOPER</p>
-        </div>
-      </div>
+      <PersonalDetails class="vital-info__left-wrapper" />
+
       <img
         class="vital-info__profile-image"
-        src="@/assets/marcin_photo.png"
+        src="../../assets/marcin_photo.png"
         alt="Marcin's profile"
       />
-      <div class="vital-info__right-wrapper">
+
+      <div class="vital-info__right-wrapper right-wrapper">
         <div class="right-wrapper__info-wrapper info-wrapper">
           <div class="info-wrapper__icon-with-number icon-with-number">
             <img
               class="icon-with-number__icon"
-              src="@/assets/suitcase_icon.png"
-              alt="Suitcase icon"
+              src="https://img.icons8.com/ios/50/FFFFFF/permanent-job.png"
+              alt="permanent-job"
             />
             <p class="icon-with-number__number">3+ years</p>
           </div>
           <p class="info-wrapper__title">of experience</p>
+        </div>
+        <div class="right-wrapper__info-wrapper info-wrapper right-wrapper__certificates-info">
           <div class="info-wrapper__icon-with-number icon-with-number">
             <img
               class="icon-with-number__icon"
-              src="@/assets/certificate_icon.png"
+              src="../../assets/certificate_icon.png"
               alt="Certificate icon"
             />
             <p class="icon-with-number__number">8</p>
           </div>
           <p class="info-wrapper__title">certificates</p>
+        </div>
+        <div class="right-wrapper__info-wrapper info-wrapper">
           <div class="info-wrapper__icon-with-number icon-with-number">
-            <img class="icon-with-number__icon" src="@/assets/trophy_icon.png" alt="Trophy icon" />
+            <img
+              class="icon-with-number__icon"
+              src="../../assets/trophy_icon.png"
+              alt="Trophy icon"
+            />
             <p class="icon-with-number__number">4</p>
           </div>
           <p class="info-wrapper__title">awards won</p>
         </div>
-        vital-info__right-wrapper
       </div>
     </div>
     <div class="container__socials-resume socials-resume">
@@ -62,7 +63,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid green;
+  border: 1px solid #1d28fd;
 }
 
 .vital-info {
@@ -70,19 +71,29 @@
   justify-content: center;
   width: 100%;
 
+  &__left-wrapper {
+    transform: translateX(15px);
+  }
+
   &__profile-image {
     max-width: 200px;
     max-height: 200px;
     border-radius: 50%;
     border: 2px #e0e0e0 solid;
   }
+
+  &__right-wrapper {
+    transform: translateX(-5px);
+  }
 }
+
+// left wrapper START
 
 .left-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .left-wrapper-top {
@@ -90,7 +101,6 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  gap: 10px;
 
   &__full-name {
     font-weight: var(--font-bold);
@@ -103,7 +113,6 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  gap: 10px;
 
   &__salesforce-text {
     font-weight: var(--font-bold);
@@ -129,6 +138,18 @@
 
   &__text {
     padding-right: 20px;
+  }
+}
+
+// left wrapper END
+// right wrapper START
+.right-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__certificates-info {
+    padding-left: 20px;
   }
 }
 

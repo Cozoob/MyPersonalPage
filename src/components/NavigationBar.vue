@@ -78,39 +78,42 @@ function observeEachSection(): void {
 </template>
 
 <style scoped lang="scss">
-$color-primary: #6c63ff;
-$color-secondary: #3f3d56;
+$color-primary: #ec4186;
 
 .bar {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 800px;
   width: 100%;
   height: 60px;
-  border-radius: 20px;
-  border: 2px #e0e0e0 solid;
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 
   &__item {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 25%;
+    max-width: 200px;
     height: 100%;
     font-weight: var(--font-bold);
     font-size: 20px;
-    border-radius: 20px;
 
-    &:active,
     &--active {
       color: white;
-      background-color: $color-primary;
+      //background-color: $color-primary;
+      border-bottom: 2px $color-primary solid;
+      margin-bottom: -2px;
     }
 
     &:hover {
       color: white;
-      background-color: $color-secondary;
+      //background-color: rgba(236, 65, 134, 0.2);
+      border-bottom: 2px rgba(236, 65, 134, 0.6) solid;
+      margin-bottom: -2px;
       cursor: pointer;
     }
   }
