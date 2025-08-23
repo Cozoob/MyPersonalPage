@@ -18,9 +18,9 @@ function onNavigationBarUpdate(sectionId: string): void {
 </script>
 
 <template>
-  <div class="page">
+  <div :class="$style.page">
     <NavigationBar
-      class="page__navigation-bar"
+      :class="$style['page__navigation-bar']"
       :nav-items="sections"
       :active-section-id="activeSectionId"
       @update="onNavigationBarUpdate"
@@ -30,7 +30,7 @@ function onNavigationBarUpdate(sectionId: string): void {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style module lang="scss">
 .page {
   width: 100%;
   height: 100%;

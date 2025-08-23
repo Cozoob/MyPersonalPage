@@ -13,12 +13,12 @@ withDefaults(
 </script>
 
 <template>
-  <div class="container">
+  <div :class="$style.container">
     <section
       v-for="section in sections"
       :id="section.id"
       :key="section.id"
-      class="container__section"
+      :class="$style['container__section']"
     >
       <template v-if="section.id == 'about'">
         <AboutSection />
@@ -43,7 +43,7 @@ withDefaults(
   </div>
 </template>
 
-<style scoped lang="scss">
+<style module lang="scss">
 .container {
   display: flex;
   align-items: center;

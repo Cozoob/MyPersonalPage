@@ -65,11 +65,11 @@ function observeEachSection(): void {
 </script>
 
 <template>
-  <nav class="bar">
+  <nav :class="$style.bar">
     <div
       v-for="item in navItems"
       :key="item.id"
-      :class="['bar__item', { 'bar__item--active': activeSectionId === item.id }]"
+      :class="[$style['bar__item'], { [$style['bar__item--active']]: activeSectionId === item.id }]"
       @click.prevent="scrollToSection(item.id)"
     >
       <p>{{ item.label }}</p>
@@ -77,7 +77,7 @@ function observeEachSection(): void {
   </nav>
 </template>
 
-<style scoped lang="scss">
+<style module lang="scss">
 $color-primary: #ec4186;
 
 .bar {
