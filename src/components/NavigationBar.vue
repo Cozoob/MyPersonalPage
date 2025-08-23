@@ -78,8 +78,6 @@ function observeEachSection(): void {
 </template>
 
 <style module lang="scss">
-$color-primary: #ec4186;
-
 .bar {
   position: relative;
   z-index: 2;
@@ -100,19 +98,17 @@ $color-primary: #ec4186;
     max-width: 200px;
     height: 100%;
     font-weight: var(--font-bold);
-    font-size: 20px;
+    font-size: var(--font-size-h1);
 
     &--active {
       color: white;
-      //background-color: $color-primary;
-      border-bottom: 2px $color-primary solid;
+      border-bottom: 2px var(--color-primary) solid;
       margin-bottom: -2px;
     }
 
     &:hover {
       color: white;
-      //background-color: rgba(236, 65, 134, 0.2);
-      border-bottom: 2px rgba(236, 65, 134, 0.6) solid;
+      border-bottom: 2px var(--color-primary-darken) solid;
       margin-bottom: -2px;
       cursor: pointer;
     }

@@ -42,7 +42,7 @@
 
 .full-name {
   font-weight: var(--font-bold);
-  font-size: 24px;
+  font-size: var(--font-size-h2);
 }
 
 .localization {
@@ -62,12 +62,12 @@
 
 .salesforce-text {
   font-weight: var(--font-bold);
-  font-size: 48px;
+  font-size: var(--font-size-h6);
   padding-right: 20px;
 }
 
 .profession-text {
   font-weight: var(--font-bold);
-  font-size: 32px;
+  font-size: var(--font-size-h4);
 }
 </style>

@@ -53,10 +53,10 @@ withDefaults(
 
   &__section {
     //height: 100%;
-    height: 100vh;
+    height: 80vh;
     max-width: 1200px;
     width: 100%;
-    border: 1px pink solid;
+    //border: 1px pink solid;
   }
 }
 </style>

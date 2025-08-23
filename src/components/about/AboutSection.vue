@@ -70,6 +70,7 @@ import PersonalDetails from '@/components/about/PersonalDetails.vue'
   flex-direction: column;
   justify-content: center;
   border: 1px solid #1d28fd;
+  margin-top: 5em;
 }
 
 .vital-info {
@@ -86,6 +87,7 @@ import PersonalDetails from '@/components/about/PersonalDetails.vue'
     max-height: 200px;
     border-radius: 50%;
     border: 2px #e0e0e0 solid;
+    margin: 0 5px 0 15px;
   }
 
   &__right-wrapper {
@@ -110,7 +112,7 @@ import PersonalDetails from '@/components/about/PersonalDetails.vue'
 
   &__full-name {
     font-weight: var(--font-bold);
-    font-size: 24px;
+    font-size: var(--font-size-h2);
   }
 }
 
@@ -122,13 +124,13 @@ import PersonalDetails from '@/components/about/PersonalDetails.vue'
 
   &__salesforce-text {
     font-weight: var(--font-bold);
-    font-size: 48px;
+    font-size: var(--font-size-h6);
     padding-right: 20px;
   }
 
   &__position-text {
     font-weight: var(--font-bold);
-    font-size: 32px;
+    font-size: var(--font-size-h4);
   }
 }
 
@@ -161,7 +163,7 @@ import PersonalDetails from '@/components/about/PersonalDetails.vue'
 
 .info-wrapper {
   &__title {
-    font-size: 24px;
+    font-size: var(--font-size-h2);
   }
 }
 
@@ -177,7 +179,7 @@ import PersonalDetails from '@/components/about/PersonalDetails.vue'
 
   &__number {
     font-weight: var(--font-bold);
-    font-size: 30px;
+    font-size: var(--font-size-h3);
   }
 }
 </style>
