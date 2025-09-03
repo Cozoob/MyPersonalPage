@@ -1,0 +1,62 @@
+<script setup lang="ts">
+import AboutSection from '@/components/about/AboutSection.vue'
+import type Section from '@/model/section.ts'
+
+withDefaults(
+  defineProps<{
+    sections?: Section[]
+  }>(),
+  {
+    sections: () => [],
+  },
+)
+</script>
+
+<template>
+  <div :class="$style.container">
+    <section
+      v-for="section in sections"
+      :id="section.id"
+      :key="section.id"
+      :class="$style['container__section']"
+    >
+      <template v-if="section.id == 'about'">
+        <AboutSection />
+      </template>
+      <template v-else-if="section.id == 'experience'">
+        <h2>experience - GENERIC</h2>
+        <p>Content TODO for experience</p>
+      </template>
+      <template v-else-if="section.id == 'skills'">
+        <h2>skills - GENERIC</h2>
+        <p>Content TODO for skills</p>
+      </template>
+      <template v-else-if="section.id == 'projects'">
+        <h2>projects - GENERIC</h2>
+        <p>Content TODO for projects</p>
+      </template>
+      <template v-else>
+        <h2>ERROR</h2>
+        <p>NO SUCH SECTION...</p>
+      </template>
+    </section>
+  </div>
+</template>
+
+<style module lang="scss">
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+
+  &__section {
+    //height: 100%;
+    height: 80vh;
+    max-width: 1200px;
+    width: 100%;
+    //border: 1px pink solid;
+  }
+}
+</style>

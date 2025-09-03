@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host --port 5173",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "test:unit": "vitest",
@@ -28,7 +28,7 @@
     "@vue/eslint-config-typescript": "^14.5.1",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
-    "eslint": "^9.29.0",
+    "eslint": "^9.32.0",
     "eslint-plugin-vue": "~10.2.0",
     "jiti": "^2.4.2",
     "jsdom": "^26.1.0",
